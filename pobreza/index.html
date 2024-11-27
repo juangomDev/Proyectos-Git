@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pobreza</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/main.css">
+</head>
+<body>
+    <!-- <div class="waiting-room"></div> -->
+
+
+    <div class="flex-wrapper">
+        <header id="header">
+            <div class="icon">
+                <input type="checkbox" role="button" aria-label="Display the menu" class="menu" id="menu-icon">
+            </div>
+            <div class="header-container" id="header-container">
+
+                <div class="search">
+                    <label action="" id="search-form">
+
+                        <h3>Buscar</h3>
+                        <input type="text" id="search-text" placeholder="Buscar">
+
+                    </label>
+
+                    <ul class="ul">
+                        <li class="option_list"></li>
+                        <li class="option_list"></li>
+                        <li class="option_list"></li>
+                        <li class="option_list"></li>
+                        <li class="option_list"></li>
+                        <li class="option_list"></li>
+                        <li class="option_list"></li>
+                        <li class="option_list"></li>
+                        <li class="option_list"></li>
+                        <li class="option_list"></li>
+                    </ul>
+                </div>
+
+
+                <form class="form-header formcontainer" id="form-header">
+                    <h3>Seleccione el estado </h3>
+                    <label for="state" id="label-state">Estado</label>
+                    <select id="state-select">
+                    </select>
+                </form>
+            </div>
+        </header>
+
+
+        <div class="container">
+
+            <div class="graph-container">
+
+                <h2> Niveles de Pobreza INE,Censo 2011 </h2>
+                <h2 id="pointer-text"> </h2>
+
+                <section id="menu-censo-corte">
+
+                    <ul id="list-censo-corte">
+                        <li class="censo-corte ndp" id="pobreza-absoluta">Pobreza General y Extrema</li>
+                        <li class="censo-corte ndp" id="pobreza_relativa">Por Variable</li>
+                        <li class="censo-corte ndp" id="pobreza_relativa">Grupo de Edades</li>
+                        <li class="censo-corte ndp" id="pobreza_relativa">Pirámide de población</li>
+                    </ul>
+
+                </section>
+
+                
+
+                
+
+                <section class="piramide">
+                    
+                    <canvas id="state-chart" style="width:700px;max-width:700px"></canvas>
+
+                    <main>
+                        <ul>
+                            <li>
+                                HOMBRE
+                            </li>
+                            <li>
+                                MUJERES
+                            </li>
+                        </ul>
+                   
+                        <canvas class="myCanvas" height="5000"  width="6000"></canvas>     
+                    </main>
+                    
+                </section>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    <!-- Librerias -->
+    <script lang="javascript" src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+    <!-- SCRIPT -->
+    <script  src="./script/menu.js"></script>
+    <script  src="./script/loading.js"></script>
+    <script  src="./script/index.js"></script>
+    <script  src="./script/sector.js"></script>
+    <script  src="./script/piramide.js"></script>
+</body>
+</html>

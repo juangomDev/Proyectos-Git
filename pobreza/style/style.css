@@ -1,0 +1,120 @@
+* {
+    margin: 0px;
+    padding: 0px;
+
+}
+
+@property --size-load {
+    syntax: "<length>";
+    inherits: true;
+    initial-value: 100px;
+}
+
+.waiting-room {
+    background-color: white;
+    height: 100dvh;
+    width: 100dvw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    position: absolute;
+    top: 0px;
+
+    &::after {
+        content: "INE";
+
+        border-radius: 50%;
+        width: var(--size-load);
+        height: var(--size-load);
+        color: white;
+        font-size: 1.5rem;
+
+        background: rgb(211, 255, 0);
+        background: linear-gradient(130deg, rgba(211, 255, 0, 1) 0%, rgba(29, 143, 253, 1) 50%, rgba(249, 24, 24, 1) 100%);
+        box-shadow: 3px 4px 8px black;
+
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        animation: waitingRoom 3s infinite alternate;
+    }
+
+}
+
+@keyframes waitingRoom {
+    from {
+        font-size: 1.7rem;
+        --size-load: 100px;
+    }
+
+    to {
+        font-size: 5rem;
+        --size-load: 250px;
+    }
+}
+
+.piramide{
+    position: relative;
+
+    #state-chart{   
+        background-color: white;
+        position: absolute;
+        top: 0px;
+        min-height: 350px;
+    }
+    
+    
+}
+
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .myCanvas{
+        opacity: 0;
+
+        background-color: white;
+        width: 690px;
+        max-width: 700px;
+        height: 40dvw;
+        max-height: 90dvh;
+
+
+        border: 2px solid black;
+    }
+
+    ul{
+        display: flex;
+        list-style: none;
+        gap: 30px;
+        padding: 10px;
+
+        li{
+            font-weight: bold;
+
+            &::before{
+                content: "";
+
+                background-color: rgb(215, 31, 225);
+                border-radius: 50%;
+                display: inline-block;
+                width: 12px;
+                height: 12px;
+
+                font-family: 'Courier New', Courier, monospace;
+            }
+        }
+
+        li:first-child::before{
+            background-color: rgb(31, 47, 225);
+
+        }
+    }
+}
